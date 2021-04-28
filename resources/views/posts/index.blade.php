@@ -6,9 +6,7 @@
             <div class="pull-left">
                 <h2>Laravel 8 CRUD Example from scratch - laravelcode.com</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('posts.create') }}"> Create New Post</a>
-            </div>
+            
         </div>
     </div>
    
@@ -31,13 +29,7 @@
             <td>{{ $value->title }}</td>
             <td>{{ \Str::limit($value->description, 100) }}</td>
             <td>
-                <form action="{{ route('posts.destroy',$value->id) }}" method="POST">   
-                    <a class="btn btn-info" href="{{ route('posts.show',$value->id) }}">Show</a>    
-                    <a class="btn btn-primary" href="{{ route('posts.edit',$value->id) }}">Edit</a>   
-                    @csrf
-                    @method('DELETE')      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
+                
             </td>
         </tr>
         @endforeach
